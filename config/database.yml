@@ -1,0 +1,23 @@
+<% branch = `git symbolic-ref HEAD 2>/dev/null`.chomp.sub('refs/heads/', '')[0..40] %>
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  timeout: 5000
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+
+development:
+  <<: *default
+  database: dev_<%= branch %>
+  gssencmode: disable
+
+test: &test
+  <<: *default
+  database: test_<%= branch %>
+
+staging:
+  <<: *default
+
+production:
+  <<: *default
