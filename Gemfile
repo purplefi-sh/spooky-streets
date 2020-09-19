@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby IO.read('.ruby-version').strip
 
+gem 'activerecord-postgis-adapter'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'name_of_person'
 gem 'pg', '>= 0.18', '< 2.0'

@@ -1,7 +1,7 @@
 <% branch = `git symbolic-ref HEAD 2>/dev/null`.chomp.sub('refs/heads/', '')[0..40] %>
 
 default: &default
-  adapter: postgresql
+  adapter: postgis
   encoding: unicode
   timeout: 5000
   url:  <%= ENV["DATABASE_URL"] %>
