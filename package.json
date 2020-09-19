@@ -1,5 +1,5 @@
 {
-  "name": "quickstart",
+  "name": "spooky-streets",
   "private": true,
   "dependencies": {
     "@babel/preset-react": "^7.10.4",
