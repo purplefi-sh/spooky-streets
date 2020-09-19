@@ -42,3 +42,9 @@
 
   - component.slot :row do
     h1 data-target="hello.output"
+
+= render CardComponent.new(classes: 'mb-5') do |component|
+  - component.slot :header, title: 'React'
+
+  - component.slot :row do
+    #root
