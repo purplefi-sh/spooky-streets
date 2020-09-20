@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby IO.read('.ruby-version').strip
 
 gem 'activerecord-postgis-adapter'
+gem 'awesome_print'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'name_of_person'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -14,6 +15,7 @@ gem 'redis', '~> 4.0'
 gem 'sidekiq'
 gem 'slim-rails'
 gem 'turbolinks', '~> 5'
+gem 'typhoeus'
 gem 'view_component'
 gem 'webpacker', '~> 4.0'
 

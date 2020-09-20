@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_19_200635) do
+ActiveRecord::Schema.define(version: 2020_09_20_001729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
+
+  create_table "tweets", force: :cascade do |t|
+    t.string "twitter_id"
+    t.string "text"
+    t.string "location_string"
+    t.geometry "location_point", limit: {:srid=>0, :type=>"st_point"}
+  end
 
 end
